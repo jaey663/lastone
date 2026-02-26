@@ -8,20 +8,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy-deepest: #081428;
-    --navy-deep: #0d1f40;
-    --navy: #102850;
-    --navy-mid: #1a3d6e;
-    --navy-light: #2151a0;
-    --navy-accent: #2d64c8;
-    --gold: #f0c050;
-    --gold-light: #fad978;
-    --gold-dim: #b08a30;
+    --navy-deepest: #071220;
+    --navy-deep: #0c1e38;
+    --navy: #112848;
+    --navy-mid: #1a3a60;
+    --navy-light: #224e80;
+    --navy-accent: #2a6098;
+    --gold: #c4a882;
+    --gold-light: #e8dcc8;
+    --gold-dim: #8b6840;
     --white: #ffffff;
-    --white-dim: rgba(255,255,255,0.75);
+    --white-dim: rgba(255,255,255,0.80);
     --white-faint: rgba(255,255,255,0.10);
-    --sky: #c8deff;
-    --sky-dim: rgba(200,222,255,0.15);
+    --sky: #e8dcc8;
+    --beige: #f5f0e8;
+    --beige-mid: #d4b896;
+    --brown: #8b6840;
+    --sky-dim: rgba(232,220,200,0.15);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -144,7 +147,7 @@
     top: 50%; left: 30%;
     transform: translate(-50%, -50%);
     width: 800px; height: 800px;
-    background: radial-gradient(ellipse, rgba(45,100,200,0.18) 0%, rgba(240,192,80,0.05) 50%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(196,168,130,0.12) 0%, rgba(34,78,128,0.08) 50%, transparent 70%);
     pointer-events: none;
   }
 
@@ -186,11 +189,11 @@
     animation: fadeUp 0.9s ease forwards 0.5s;
   }
 
-  .hero-name .first { display: block; color: var(--white); text-shadow: 0 0 60px rgba(200,222,255,0.3); }
+  .hero-name .first { display: block; color: var(--white); text-shadow: 0 0 60px rgba(232,220,200,0.2); }
   .hero-name .last {
     display: block;
     color: transparent;
-    -webkit-text-stroke: 2px var(--gold);
+    -webkit-text-stroke: 2px var(--beige-mid, #d4b896);
     font-style: italic;
   }
 
@@ -354,7 +357,7 @@
   }
 
   /* ─── ABOUT SECTION ─── */
-  .about { background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 100%); }
+  .about { background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 60%, #1e3d58 100%); }
 
   .about-grid {
     display: grid;
@@ -480,7 +483,7 @@
   }
 
   /* ─── SKILLS SECTION ─── */
-  .skills { background: var(--navy); }
+  .skills { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deepest) 100%); }
 
   .skills-grid {
     display: grid;
@@ -504,13 +507,13 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(to right, var(--gold), var(--sky));
+    background: linear-gradient(to right, var(--gold), var(--beige-mid, #d4b896));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s;
   }
 
-  .skill-card:hover { background: var(--navy-light); }
+  .skill-card:hover { background: var(--navy-mid); }
   .skill-card:hover::before { transform: scaleX(1); }
 
   .skill-icon {
@@ -560,7 +563,7 @@
   }
 
   /* ─── MINDSET SECTION ─── */
-  .mindset { background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); }
+  .mindset { background: linear-gradient(135deg, var(--navy-mid) 0%, #1c3555 60%, #22304a 100%); }
 
   .mindset-inner {
     display: grid;
@@ -635,7 +638,7 @@
 
   /* ─── VISION SECTION ─── */
   .vision {
-    background: var(--navy-deep);
+    background: linear-gradient(180deg, var(--navy-deepest) 0%, var(--navy-deep) 100%);
     text-align: center;
     padding: 8rem 4rem;
     position: relative;
@@ -648,7 +651,7 @@
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 700px; height: 700px;
-    background: radial-gradient(ellipse, rgba(45,100,200,0.15) 0%, rgba(240,192,80,0.04) 50%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(196,168,130,0.10) 0%, rgba(34,78,128,0.06) 50%, transparent 70%);
     pointer-events: none;
   }
 
@@ -688,9 +691,9 @@
 
   /* ─── CONTACT STRIP ─── */
   .contact-strip {
-    background: linear-gradient(135deg, var(--navy-light), var(--navy-accent));
-    border-top: 2px solid rgba(240,192,80,0.3);
-    border-bottom: 2px solid rgba(240,192,80,0.3);
+    background: linear-gradient(135deg, var(--navy-mid) 0%, #2a4060 50%, #3a3028 100%);
+    border-top: 2px solid rgba(196,168,130,0.35);
+    border-bottom: 2px solid rgba(196,168,130,0.35);
     padding: 5rem 4rem;
     text-align: center;
   }
@@ -703,7 +706,7 @@
   }
 
   .contact-strip p {
-    color: var(--sky);
+    color: var(--beige);
     font-size: 0.9rem;
     margin-bottom: 2.5rem;
     letter-spacing: 0.05em;
@@ -773,8 +776,87 @@
     opacity: 0.6;
   }
 
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp {
+  /* ─── TYPING CURSOR BLINK ─── */
+  .typing-cursor {
+    display: inline-block;
+    color: var(--gold);
+    font-weight: 300;
+    animation: blink 0.9s step-end infinite;
+    margin-left: 2px;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* ─── HOVER GLOW (mouse-tracked radial) ─── */
+  .skill-card, .stat-box, .trait, .contact-link {
+    --gx: 50%; --gy: 50%;
+  }
+  .skill-card::after, .stat-box::after, .trait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      120px circle at var(--gx) var(--gy),
+      rgba(196,168,130,0.09),
+      transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.35s;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .skill-card:hover::after,
+  .stat-box:hover::after,
+  .trait:hover::after { opacity: 1; }
+
+  /* Make card children sit above glow layer */
+  .skill-card > *, .stat-box > *, .trait > * { position: relative; z-index: 1; }
+
+  /* Button glow on hover */
+  .hero-cta, .contact-link {
+    transition: all 0.3s, box-shadow 0.3s;
+  }
+  .hero-cta:hover {
+    box-shadow: 0 0 28px rgba(196,168,130,0.25), 0 0 6px rgba(196,168,130,0.15);
+  }
+  .contact-link:hover {
+    box-shadow: 0 0 22px rgba(196,168,130,0.2);
+  }
+
+  /* ─── NAV ACTIVE LINK ─── */
+  nav a.nav-active {
+    color: var(--gold);
+  }
+  nav a.nav-active::after { transform: scaleX(1); }
+
+  /* ─── ENHANCED SCROLL REVEAL ─── */
+  /* Override previous reveal with smoother, direction-aware version */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger siblings inside a grid */
+  .skills-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+  .skills-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
+  .about-stats .reveal:nth-child(2) { transition-delay: 0.08s; }
+  .about-stats .reveal:nth-child(3) { transition-delay: 0.16s; }
+  .about-stats .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+  /* ─── SECTION ENTRANCE WIPE ─── */
+  section, .contact-strip {
+    position: relative;
+  }
+
+
     from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
   }
@@ -813,7 +895,10 @@
 </head>
 <body>
 
-<!-- CUSTOM CURSOR -->
+<!-- PARTICLE CANVAS -->
+<canvas id="particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.7;"></canvas>
+
+<!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
@@ -840,7 +925,7 @@
       <span class="first">Jay L.</span>
       <span class="last">Kalaw</span>
     </h1>
-    <p class="hero-title">Developer &nbsp;·&nbsp; Strategist &nbsp;·&nbsp; Builder</p>
+    <p class="hero-title"><span id="typing-text">Developer</span><span class="typing-cursor">|</span> &nbsp;·&nbsp; Strategist &nbsp;·&nbsp; Builder</p>
     <div class="hero-divider"></div>
     <p class="hero-desc">
       Not everyone is built to <strong>dominate every field they enter.</strong><br>
@@ -1021,7 +1106,7 @@
   <h2 class="reveal">Get in Touch</h2>
   <p class="reveal">Selective with my time. Serious inquiries only.</p>
   <div class="contact-links reveal">
-    <a href="mailto:jay@example.com" class="contact-link">✉ Email</a>
+    <a href="mailto:jaykalawbusiness@gmail.com" class="contact-link">✉ Email</a>
     <a href="#" class="contact-link">💼 LinkedIn</a>
     <a href="#" class="contact-link">🐙 GitHub</a>
   </div>
@@ -1035,53 +1120,149 @@
 </footer>
 
 <script>
-  // Custom cursor
+  /* ── 1. CUSTOM CURSOR ── */
   const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-
+  const ring   = document.getElementById('cursorRing');
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    cursor.style.top  = e.clientY + 'px';
     setTimeout(() => {
       ring.style.left = e.clientX + 'px';
-      ring.style.top = e.clientY + 'px';
+      ring.style.top  = e.clientY + 'px';
     }, 60);
   });
-
-  document.querySelectorAll('a, .trait, .skill-card, .stat-box').forEach(el => {
+  document.querySelectorAll('a, .trait, .skill-card, .stat-box, .contact-link').forEach(el => {
     el.addEventListener('mouseenter', () => {
-      cursor.style.width = '16px';
-      cursor.style.height = '16px';
-      ring.style.width = '56px';
-      ring.style.height = '56px';
+      cursor.style.width = '16px'; cursor.style.height = '16px';
+      ring.style.width = '56px';   ring.style.height = '56px';
       ring.style.opacity = '0.8';
     });
     el.addEventListener('mouseleave', () => {
-      cursor.style.width = '10px';
-      cursor.style.height = '10px';
-      ring.style.width = '38px';
-      ring.style.height = '38px';
+      cursor.style.width = '10px'; cursor.style.height = '10px';
+      ring.style.width = '38px';   ring.style.height = '38px';
       ring.style.opacity = '0.5';
     });
   });
 
-  // Scroll reveal
-  const observer = new IntersectionObserver(entries => {
+  /* ── 2. PARTICLE CANVAS ── */
+  const canvas = document.getElementById('particles');
+  const ctx    = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function Particle() {
+    this.reset = function() {
+      this.x  = Math.random() * W;
+      this.y  = Math.random() * H;
+      this.r  = Math.random() * 1.4 + 0.3;
+      this.vx = (Math.random() - 0.5) * 0.25;
+      this.vy = (Math.random() - 0.5) * 0.25;
+      this.alpha = Math.random() * 0.35 + 0.05;
+      // alternate between beige and white tones
+      this.color = Math.random() > 0.5 ? '232,220,200' : '255,255,255';
+    };
+    this.reset();
+  }
+
+  for (let i = 0; i < 90; i++) {
+    const p = new Particle();
+    p.y = Math.random() * H; // spread on load
+    particles.push(p);
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > W || p.y < 0 || p.y > H) p.reset();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+
+  /* ── 3. TYPING EFFECT on hero subtitle ── */
+  const typingEl = document.getElementById('typing-text');
+  const words    = ['Developer', 'Strategist', 'Builder', 'Optimizer'];
+  let wIndex = 0, cIndex = 0, deleting = false;
+
+  function type() {
+    const word = words[wIndex];
+    if (!deleting) {
+      typingEl.textContent = word.slice(0, ++cIndex);
+      if (cIndex === word.length) {
+        deleting = true;
+        setTimeout(type, 1800);
+        return;
+      }
+    } else {
+      typingEl.textContent = word.slice(0, --cIndex);
+      if (cIndex === 0) {
+        deleting = false;
+        wIndex   = (wIndex + 1) % words.length;
+      }
+    }
+    setTimeout(type, deleting ? 55 : 90);
+  }
+  setTimeout(type, 1800);
+
+  /* ── 4. SMOOTH SCROLL SECTION TRANSITIONS ── */
+  // Sections slide in from slight Y offset with staggered children
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        setTimeout(() => entry.target.classList.add('visible'), i * 90);
+        revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Active nav link highlight on scroll
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks  = document.querySelectorAll('nav a[href^="#"]');
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('nav-active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => navObserver.observe(s));
 
-  // Smooth nav highlight
-  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+  // Smooth scroll on nav clicks
+  navLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
       if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* ── 5. HOVER GLOW on cards ── */
+  document.querySelectorAll('.skill-card, .stat-box, .trait, .contact-link').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1);
+      const y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1);
+      card.style.setProperty('--gx', x + '%');
+      card.style.setProperty('--gy', y + '%');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.removeProperty('--gx');
+      card.style.removeProperty('--gy');
     });
   });
 </script>
